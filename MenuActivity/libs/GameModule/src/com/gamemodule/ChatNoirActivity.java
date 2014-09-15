@@ -1,6 +1,7 @@
 package com.gamemodule;
 
 import android.annotation.SuppressLint;
+import com.beardedhen.androidbootstrap.BootstrapButton;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -27,8 +28,8 @@ public class ChatNoirActivity extends Activity implements OnClickListener {
     private Game mGame;
     private Player me; //user
     
-    private Button restart;
-    private Button undo;
+    private BootstrapButton restart;
+    private BootstrapButton undo;
     private int undoNr = 1;
     
     private TextView steps;
@@ -65,8 +66,8 @@ public class ChatNoirActivity extends Activity implements OnClickListener {
     
     private void initView(){
     	mGameView = (GameView) findViewById(R.id.game_view);
-        restart = (Button) findViewById(R.id.restart_button);
-        undo = (Button) findViewById(R.id.undo_button);
+        restart = (BootstrapButton) findViewById(R.id.restart_button);
+        undo = (BootstrapButton) findViewById(R.id.undo_button);
         
         steps = (TextView) findViewById(R.id.steps);
         
@@ -83,21 +84,22 @@ public class ChatNoirActivity extends Activity implements OnClickListener {
     
     @Override
     public void onClick(View v) {
-        //switch (v.getId()) { 
-        //case R.id.restart_button:
-    	if(v.getId() == R.id.restart_button){
+        switch (v.getId()) {
+        case R.id.restart_button:
             mGame.reset();
             mGameView.drawGame();
             updateSteps();
             undoNr = 1;
-    	}else if(v.getId() == R.id.undo_button){
-        //case R.id.undo_button:
+        	undo.setBootstrapButtonEnabled(true);
+            break;
+        case R.id.undo_button:
         	if(undoNr == 1 && rollback()){
         		undoNr = 0;
+        		undo.setBootstrapButtonEnabled(false);
         	}
-            //break;
-        //default:
-         //   break;
+            break;
+        default:
+            break;
         }
     }
     

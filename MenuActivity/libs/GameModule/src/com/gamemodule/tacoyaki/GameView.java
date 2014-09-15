@@ -86,6 +86,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
 		Canvas canvas = mHolder.lockCanvas();
 		canvas.drawPaint(clear);
 		mHolder.unlockCanvasAndPost(canvas);
+		// IMPORTANT! clear again to void view overlap
+		canvas = mHolder.lockCanvas();
+		canvas.drawPaint(clear);
+		mHolder.unlockCanvasAndPost(canvas);
 		
 		// change the value of start point
 		startX -= circleSize / 2;
@@ -100,9 +104,15 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
 		if(type == gameType) return;
 		mGame.switchGame(type);
 		
+		// clear canvas
 		Canvas canvas = mHolder.lockCanvas();
 		canvas.drawPaint(clear);
 		mHolder.unlockCanvasAndPost(canvas);
+		// IMPORTANT !! see func @levelUP();
+		canvas = mHolder.lockCanvas();
+		canvas.drawPaint(clear);
+		mHolder.unlockCanvasAndPost(canvas);
+		
 		int tmp = boardWidth;
 		boardWidth = mGame.getWidth();
 		gameType = mGame.getGameType();
