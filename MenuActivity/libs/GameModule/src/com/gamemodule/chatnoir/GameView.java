@@ -135,6 +135,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 			return;
 		}
 		catPos = mGame.getCatPos();
+		if(catPos == null)
+			Log.d(ALSO, "catPos == null");
+			
 	
 		float cx = startX + catPos.x * circleSize
 				- ((catPos.y % 2 == 0) ? circleSize/2 : 0);
