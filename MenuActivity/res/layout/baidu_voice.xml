@@ -48,5 +48,45 @@
         android:name="wangchao.voicemodule.ControlPanelFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    
+   <!--  <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/uptest"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/uptest" />
+
+        <Button
+            android:id="@+id/downtest"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/downtest" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/lefttest"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/lefttest" />
+
+        <Button
+            android:id="@+id/righttest"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/righttest" />
+    </LinearLayout> -->
 
 </LinearLayout>

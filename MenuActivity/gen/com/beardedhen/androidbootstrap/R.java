@@ -121,32 +121,32 @@ public final class R {
 		public static final int thumbnail_circle_minimal = 0x7f020094;
 	}
 	public static final class id {
-		public static final int action_settings = 0x7f060093;
-		public static final int container = 0x7f06004a;
-		public static final int dimensionsLabel = 0x7f06004c;
+		public static final int action_settings = 0x7f06008e;
+		public static final int container = 0x7f060048;
+		public static final int dimensionsLabel = 0x7f06004a;
 		public static final int image = 0x7f060027;
-		public static final int layout = 0x7f060045;
-		public static final int lblColA = 0x7f060080;
-		public static final int lblColB = 0x7f060081;
-		public static final int lblLeft = 0x7f060046;
-		public static final int lblMiddle = 0x7f060047;
-		public static final int lblRight = 0x7f060048;
-		public static final int lblSubTitle = 0x7f06007f;
-		public static final int lblText = 0x7f06005a;
-		public static final int lblTitle = 0x7f06007e;
-		public static final int placeholder = 0x7f06004b;
-		public static final int txtText = 0x7f060049;
+		public static final int layout = 0x7f060043;
+		public static final int lblColA = 0x7f06007b;
+		public static final int lblColB = 0x7f06007c;
+		public static final int lblLeft = 0x7f060044;
+		public static final int lblMiddle = 0x7f060045;
+		public static final int lblRight = 0x7f060046;
+		public static final int lblSubTitle = 0x7f06007a;
+		public static final int lblText = 0x7f060059;
+		public static final int lblTitle = 0x7f060079;
+		public static final int placeholder = 0x7f060049;
+		public static final int txtText = 0x7f060047;
 	}
 	public static final class layout {
-		public static final int bootstrap_button = 0x7f03001b;
-		public static final int bootstrap_button_fill = 0x7f03001c;
-		public static final int bootstrap_edit_text = 0x7f03001d;
-		public static final int bootstrap_thumbnail = 0x7f03001e;
-		public static final int bootstrap_thumbnail_circle = 0x7f03001f;
-		public static final int font_awesome_text = 0x7f030023;
-		public static final int row_title = 0x7f03002c;
-		public static final int row_title_and_subtitle = 0x7f03002d;
-		public static final int row_two_columns = 0x7f03002e;
+		public static final int bootstrap_button = 0x7f03001a;
+		public static final int bootstrap_button_fill = 0x7f03001b;
+		public static final int bootstrap_edit_text = 0x7f03001c;
+		public static final int bootstrap_thumbnail = 0x7f03001d;
+		public static final int bootstrap_thumbnail_circle = 0x7f03001e;
+		public static final int font_awesome_text = 0x7f030022;
+		public static final int row_title = 0x7f03002a;
+		public static final int row_title_and_subtitle = 0x7f03002b;
+		public static final int row_two_columns = 0x7f03002c;
 	}
 	public static final class menu {
 		public static final int main = 0x7f0d0000;

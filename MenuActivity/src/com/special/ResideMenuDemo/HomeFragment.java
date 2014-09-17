@@ -1,6 +1,6 @@
 package com.special.ResideMenuDemo;
 
-import wangchao.voicemodule.VoiceMainActivity;
+import wangchao.voicemodule.BaiduVoiceTest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent_shiliceshi = new Intent();
-				intent_shiliceshi.setClass(getActivity(),VoiceMainActivity.class);
+				intent_shiliceshi.setClass(getActivity(),BaiduVoiceTest.class);
 				HomeFragment.this.startActivity(intent_shiliceshi);
 			}
 		});

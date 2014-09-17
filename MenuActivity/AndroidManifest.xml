@@ -15,10 +15,8 @@
             </intent-filter>
         </activity>
         
-         <activity  
-            android:name="wangchao.voicemodule.VoiceMainActivity"></activity>
-         <activity 
-            android:name="wangchao.voicemodule.GoActivity"></activity>
+         
+        
          <activity 
             android:name="wangchao.voicemodule.ResultActivity"></activity>
          <activity 

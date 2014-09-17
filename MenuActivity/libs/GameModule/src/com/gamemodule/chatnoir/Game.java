@@ -13,11 +13,10 @@ import java.util.Random;
 
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 
 public class Game {
-	private static final String TAG = "ChatNoir Game";
 	
+
 	private int mode = 0;
 	private int playerSteps = 0;
 	private int mGameWidth = 0;
@@ -106,12 +105,7 @@ public class Game {
 		mGameMap[ob.x][ob.y] = GameConfig.TYPE_EMPTY;
 		
 		catPos = mActions.pollLast();
-		if(catPos == null){
-			catPos = new Coordinate(mGameHeight/2, mGameWidth/2);
-			this.mGameMap[mGameHeight / 2][mGameWidth / 2] = GameConfig.TYPE_CAT;
-		} else {
-			mGameMap[catPos.x][catPos.y] = GameConfig.TYPE_CAT;
-		}
+		mGameMap[catPos.x][catPos.y] = GameConfig.TYPE_CAT;
 		return true;
 	}
 

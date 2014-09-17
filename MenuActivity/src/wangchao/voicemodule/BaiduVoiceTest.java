@@ -59,26 +59,25 @@ public class BaiduVoiceTest extends FragmentActivity {
      */
     private EditText mResult = null;
 
-    private Button uptest = null;
-	private Button downtest = null;
-	private Button righttest = null;
-	private Button lefttest = null;
+//    private Button uptest = null;
+//	private Button downtest = null;
+//	private Button righttest = null;
+//	private Button lefttest = null;
 	private ImageView imageView = null;
 	private TextView testtitle;
 	
     VisualChartMethods vcm = new VisualChartMethods();
     
     int imageNum = 0;	
-	int direct = 2;//初始默认方向为right
+	int direct = 1;//初始默认方向
 	int chart_row = 1; //初始视力表行数
 	int chart_counter = 0;//计同一行判断正确次数
 	int chart_counterf = 0; //计同一行判断错误次数
 	int times = 0;//测试次数，0为左眼，1为右眼，此后结束
 	int result[] =new int[2]; //左右眼视力对应的行数
 	int directE = vcm.setImageE(direct) ;
-	
-	
-    
+	int result_one = 0;
+	    
     /**
      * 音量更新任务
      */
@@ -104,13 +103,22 @@ public class BaiduVoiceTest extends FragmentActivity {
         testtitle = (TextView) findViewById(R.id.testtitle);
 		testtitle.setText("开始测试：");
 		
-		uptest = (Button) findViewById(R.id.uptest);
-		downtest = (Button) findViewById(R.id.downtest);
-		righttest = (Button) findViewById(R.id.righttest);
-		lefttest = (Button) findViewById(R.id.lefttest);
+//		uptest = (Button) findViewById(R.id.uptest);
+//		downtest = (Button) findViewById(R.id.downtest);
+//		righttest = (Button) findViewById(R.id.righttest);
+//		lefttest = (Button) findViewById(R.id.lefttest);
+//		
+//		uptest.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				// TODO Auto-generated method stub
+//				
+//			}
+//		});
 		
 	     imageView = (ImageView)findViewById(R.id.image);
-	     imageView.setImageDrawable(getResources().getDrawable(R.drawable.e_up));  
+	     imageView.setImageDrawable(getResources().getDrawable(R.drawable.e_right));  
 	     
 ////////////////////////////////////////////////////////////////////////////////////////   
         mResult = (EditText) findViewById(R.id.recognition_text);
@@ -235,7 +243,7 @@ public class BaiduVoiceTest extends FragmentActivity {
                         }
                     }
                     //信息反馈///////////////
-                    int result_one = 0;
+                   
                      if(vcm.Direct2Pic(sb.toString()) == directE)
                      {
                     	  mResult.setText(sb.toString()+"判断： "+judge.toJudge(sb.toString())+"正确");

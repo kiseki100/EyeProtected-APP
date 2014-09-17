@@ -10,7 +10,7 @@
     
     <!-- chat noir module -->
     <string name="restart_button">Restart</string>
-    <string name="undo_button"> Undo  </string>
+    <string name="undo_button">Undo</string>
     <string name="cnSteps">steps</string>
     
     <!-- tacoyaki module -->

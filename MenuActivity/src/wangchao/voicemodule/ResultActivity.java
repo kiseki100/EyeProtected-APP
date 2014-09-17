@@ -1,5 +1,6 @@
 package wangchao.voicemodule;
 
+import com.special.ResideMenuDemo.HomeFragment;
 import com.special.ResideMenuDemo.R;
 
 import wangchao.service.VisualChartMethods;
@@ -58,7 +59,7 @@ public class ResultActivity extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent_back = new Intent();
-				intent_back.setClass(ResultActivity.this,VoiceMainActivity.class);
+				intent_back.setClass(ResultActivity.this,HomeFragment.class);
 				ResultActivity.this.startActivity(intent_back);
 			}
 		});
