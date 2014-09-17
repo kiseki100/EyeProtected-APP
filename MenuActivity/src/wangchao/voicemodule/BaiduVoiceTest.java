@@ -238,14 +238,14 @@ public class BaiduVoiceTest extends FragmentActivity {
                     int result_one = 0;
                      if(vcm.Direct2Pic(sb.toString()) == directE)
                      {
-                    	  mResult.setText(sb.toString()+"判断： "+judge.toJudge(sb.toString())+"!yes!");
-                    	  System.out.println("yes!!!!!!!!!");
-                    	  result_one = vcm.VisualRow(1);
+                    	  mResult.setText(sb.toString()+"判断： "+judge.toJudge(sb.toString())+"正确");
+//                    	  System.out.println("yes!!!!!!!!!");
+                    	  result_one = vcm.VisualRowSimp(1);
                      }else
                      {
                     	 mResult.setText(sb.toString()+"判断： "+judge.toJudge(sb.toString())+"!no!");
-                    	 System.out.println("no!!!!!!!!!");
-                    	 result_one = vcm.VisualRow(0);
+//                    	 System.out.println("no!!!!!!!!!");
+                    	 result_one = vcm.VisualRowSimp(0);
                      }
                      //获取两次结果
                      if(result_one != 0)
@@ -254,7 +254,7 @@ public class BaiduVoiceTest extends FragmentActivity {
                     	 {
                     		 this.result[times] = result_one;
                     		 System.out.println("result["+times+"]: "+this.result[times]);
-                    		 Toast.makeText(getApplicationContext(), "请更换为右眼开始测试",
+                    		 Toast.makeText(getApplicationContext(), "左眼测试结束，请更换为右眼开始测试",
                     			     Toast.LENGTH_SHORT).show();
                     		 times += 1;
                         	 result_one = 0;

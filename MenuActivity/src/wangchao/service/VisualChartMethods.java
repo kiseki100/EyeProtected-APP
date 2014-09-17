@@ -83,46 +83,41 @@ public class VisualChartMethods {
     	//System.out.println("imageId:"+imageId);
     	return imageId;
     }
-    //模糊音的补充,欢迎大家补充！
-    String[] ups = {"上","尚","伤","商","丧","桑","散","三","撒","萨","仨"};
-    String[] downs = {"下","吓","夏","霞","虾","霞","厦","侠","辖","系","斜","些","惜","西"};
-    String[] lefts = {"左","佐","坐","做","作","座","昨","咗"};
-    String[] rights = {"右","佑","有","又","由","油","尤","友","邮","幼"};
-    String[] passes = {"过","锅","掴","国"};
-    int length = ups.length + downs.length + lefts.length + rights.length + passes.length;
     /*
      * 判断方向正误(字符)
      */
     public String toJudge(String str){
-                
+        char[] strChar = str.toCharArray();
 		String judgeback = "error";
-       
-		
-		for(int i = 0;i < length;i ++)
-        {
-        	if(str == ups[i])
-        	{
-        		judgeback = "up";
+		String context = "";
+		for(int i = 0;i < strChar.length;i++)
+		{
+			if(strChar[i] == '上')
+			{
+				judgeback = "up";
 				break;
-        	}else if(str == downs[i])
-        	{
-        		judgeback = "down";
+			}else if(strChar[i] == '下')
+			{
+				judgeback = "down";
 				break;
-        	}else if(str == lefts[i])
-        	{
-        		judgeback = "left";
+			}else if(strChar[i] == '左')
+			{
+				judgeback = "left";
 				break;
-        	}else if(str == rights[i])
-        	{
-        		judgeback = "right";
+			}else if(strChar[i] == '右')
+			{
+				judgeback = "right";
 				break;
-        	}else if(str == passes[i])
-        	{
-        		judgeback = "pass";
+			}else if(strChar[i] == '过')
+			{
+				judgeback = "pass";
 				break;
-        	}
-        }
-		
+			}else
+			{
+				judgeback = "error";
+			}			
+		}
+		//System.out.println("toJudge:"+judgeback);
 		return judgeback;
 			
    }
@@ -130,38 +125,37 @@ public class VisualChartMethods {
      * 输入字符（方向），输出图片id对照表
      */
     public int Direct2Pic(String str){
-       
+        char[] strChar = str.toCharArray();
 		int judgeback = 101010101;
-				
-		for(int i = 0;i < length; i ++)
+		String context = "";
+		for(int i = 0;i < strChar.length;i++)
 		{
-			if(str == ups[i])
-        	{
+			if(strChar[i] == '上')
+			{
 				judgeback = R.drawable.e_up;
 				break;
-        	}else if(str == downs[i])
-        	{
-        		judgeback = R.drawable.e_down;
+			}else if(strChar[i] == '下')
+			{
+				judgeback = R.drawable.e_down;
 				break;
-        	}else if(str == lefts[i])
-        	{
-        		judgeback = R.drawable.e_left;
+			}else if(strChar[i] == '左')
+			{
+				judgeback = R.drawable.e_left;
 				break;
-        	}else if(str == rights[i])
-        	{
-        		judgeback = R.drawable.e_right;
+			}else if(strChar[i] == '右')
+			{
+				judgeback = R.drawable.e_right;
 				break;
-        	}else if(str == passes[i])
-        	{
-        		judgeback = 101010000;
+			}else if(strChar[i] == '过')
+			{
+				judgeback = 101010000;
 				break;
-        	}
-			else
+			}else
 			{
 				judgeback = 101010101;
 			}			
 		}
-		
+		//System.out.println("Direct2Pic:"+judgeback);
 		return judgeback;
 			
    }
@@ -171,10 +165,58 @@ public class VisualChartMethods {
     int chart_countert = 0;//计同一行判断正确次数
 	int chart_counterf = 0; //计同一行判断错误次数 
     
-    //测试 单次 视力到达哪一行了
-    //返回行数，返回0则代表没有结束
-    //输入为正误的判断值，0为错，1为对
-    public int VisualRow(int judge_tf)
+//    //测试 单次 视力到达哪一行了
+//    //返回行数，返回0则代表没有结束
+//    //输入为正误的判断值，0为错，1为对
+//    public int VisualRow(int judge_tf)
+//    {
+//    	int visualrow = 0;//行数返回值，只有在得出结果时有返回值，否则为0
+//    	
+//    	if(chart_row > 14)
+//    	{
+//    		visualrow = chart_row;
+//    		chart_counterf = 0;
+//			chart_countert = 0;
+//			chart_row = 1;
+//    	}else if(judge_tf == 0)
+//    	{
+//    		chart_counterf += 1;
+//    		chart_countert = 0;
+//    		
+//			if(chart_counterf == 2)
+//			{
+//				visualrow = chart_row;
+//				chart_counterf = 0;
+//				chart_countert = 0;				
+//				chart_row = 1;
+//				System.out.println("resultfromvcm:  "+visualrow);			
+//			}
+//    	}
+//		 else if(judge_tf == 1)
+//		{
+//			chart_countert += 1;
+//			if(chart_row == 1)
+//			{
+//				chart_row += 1;
+//				chart_countert = 0;
+//				chart_counterf = 0;
+//			}else if(chart_row != 1)
+//			{
+//				if(chart_countert == 2)
+//					{
+//					chart_row += 1;
+//					chart_counterf = 0;
+//					chart_countert = 0;
+//					}
+//			}
+//		}
+//    	
+//    	return visualrow;
+//    }
+    /*
+     * 简化的方法，对了进入下一行，错了2次结束
+     */
+    public int VisualRowSimp(int judge_tf)
     {
     	int visualrow = 0;//行数返回值，只有在得出结果时有返回值，否则为0
     	
@@ -201,22 +243,21 @@ public class VisualChartMethods {
 		 else if(judge_tf == 1)
 		{
 			chart_countert += 1;
-			if(chart_row == 1)
-			{
-				chart_row += 1;
-				chart_countert = 0;
-				chart_counterf = 0;
-			}else if(chart_row != 1)
-			{
-				if(chart_countert == 2)
-					{
-					chart_row += 1;
-					chart_counterf = 0;
-					chart_countert = 0;
-					}
-			}
+//			if(chart_row == 1)
+//			{
+//				chart_row += 1;
+//				chart_countert = 0;
+//				chart_counterf = 0;
+//			}else if(chart_row != 1)
+//			{
+//				if(chart_countert == 2)
+//					{
+//					chart_row += 1;
+//					chart_counterf = 0;
+//					chart_countert = 0;
+//					}
+//			}
 		}
-    	
     	
     	return visualrow;
     }
