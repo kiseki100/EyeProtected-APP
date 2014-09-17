@@ -108,6 +108,10 @@ public class VisualChartMethods {
 			{
 				judgeback = "right";
 				break;
+			}else if(strChar[i] == 'сп')
+			{
+				judgeback = "right";
+				break;
 			}else if(strChar[i] == '╧Щ')
 			{
 				judgeback = "pass";
@@ -143,6 +147,10 @@ public class VisualChartMethods {
 				judgeback = R.drawable.e_left;
 				break;
 			}else if(strChar[i] == 'ср')
+			{
+				judgeback = R.drawable.e_right;
+				break;
+			}else if(strChar[i] == 'сп')
 			{
 				judgeback = R.drawable.e_right;
 				break;
