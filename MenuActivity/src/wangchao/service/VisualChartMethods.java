@@ -96,11 +96,24 @@ public class VisualChartMethods {
 			{
 				judgeback = "up";
 				break;
-			}else if(strChar[i] == '下')
+			}
+			else if(strChar[i] == '下')
+			{
+				judgeback = "down";
+				break;
+			}else if(strChar[i] == '像')
 			{
 				judgeback = "down";
 				break;
 			}else if(strChar[i] == '左')
+			{
+				judgeback = "left";
+				break;
+			}else if(strChar[i] == '作')
+			{
+				judgeback = "left";
+				break;
+			}else if(strChar[i] == '昨')
 			{
 				judgeback = "left";
 				break;
@@ -109,6 +122,14 @@ public class VisualChartMethods {
 				judgeback = "right";
 				break;
 			}else if(strChar[i] == '有')
+			{
+				judgeback = "right";
+				break;
+			}else if(strChar[i] == '哟')
+			{
+				judgeback = "right";
+				break;
+			}else if(strChar[i] == '肉')
 			{
 				judgeback = "right";
 				break;
@@ -142,7 +163,19 @@ public class VisualChartMethods {
 			{
 				judgeback = R.drawable.e_down;
 				break;
+			}else if(strChar[i] == '像')
+			{
+				judgeback = R.drawable.e_down;
+				break;
 			}else if(strChar[i] == '左')
+			{
+				judgeback = R.drawable.e_left;
+				break;
+			}else if(strChar[i] == '作')
+			{
+				judgeback = R.drawable.e_left;
+				break;
+			}else if(strChar[i] == '昨')
 			{
 				judgeback = R.drawable.e_left;
 				break;
@@ -150,7 +183,15 @@ public class VisualChartMethods {
 			{
 				judgeback = R.drawable.e_right;
 				break;
+			}else if(strChar[i] == '肉')
+			{
+				judgeback = R.drawable.e_right;
+				break;
 			}else if(strChar[i] == '有')
+			{
+				judgeback = R.drawable.e_right;
+				break;
+			}else if(strChar[i] == '哟')
 			{
 				judgeback = R.drawable.e_right;
 				break;
@@ -232,25 +273,27 @@ public class VisualChartMethods {
     	{
     		visualrow = chart_row;
     		chart_counterf = 0;
-			chart_countert = 0;
+//			chart_countert = 0;
 			chart_row = 1;
-    	}else if(judge_tf == 0)
+    	}else if(judge_tf == 0)//错误
     	{
     		chart_counterf += 1;
-    		chart_countert = 0;
+//    		chart_countert = 0;
     		
 			if(chart_counterf == 2)
 			{
 				visualrow = chart_row;
 				chart_counterf = 0;
-				chart_countert = 0;				
+//				chart_countert = 0;				
 				chart_row = 1;
-				System.out.println("resultfromvcm:  "+visualrow);			
+//				System.out.println("resultfromvcm:  "+visualrow);			
 			}
     	}
-		 else if(judge_tf == 1)
+		 else if(judge_tf == 1)//正确
 		{
-			chart_countert += 1;
+			
+			chart_row += 1;
+			chart_counterf = 0;
 //			if(chart_row == 1)
 //			{
 //				chart_row += 1;

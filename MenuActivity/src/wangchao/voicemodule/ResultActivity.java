@@ -59,7 +59,7 @@ public class ResultActivity extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent_back = new Intent();
-				intent_back.setClass(ResultActivity.this,HomeFragment.class);
+				intent_back.setClass(ResultActivity.this,BaiduVoiceTest.class);
 				ResultActivity.this.startActivity(intent_back);
 			}
 		});

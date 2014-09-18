@@ -69,7 +69,7 @@ public class BaiduVoiceTest extends FragmentActivity {
     VisualChartMethods vcm = new VisualChartMethods();
     
     int imageNum = 0;	
-	int direct = 1;//初始默认方向
+	int direct = 0;//初始默认方向
 	int chart_row = 1; //初始视力表行数
 	int chart_counter = 0;//计同一行判断正确次数
 	int chart_counterf = 0; //计同一行判断错误次数
@@ -103,6 +103,8 @@ public class BaiduVoiceTest extends FragmentActivity {
         testtitle = (TextView) findViewById(R.id.testtitle);
 		testtitle.setText("开始测试：");
 		
+		Toast.makeText(getApplicationContext(), "请将手机置于眼前50-70cm处，先进行左眼测试",
+			     Toast.LENGTH_SHORT).show();
 //		uptest = (Button) findViewById(R.id.uptest);
 //		downtest = (Button) findViewById(R.id.downtest);
 //		righttest = (Button) findViewById(R.id.righttest);
@@ -118,7 +120,7 @@ public class BaiduVoiceTest extends FragmentActivity {
 //		});
 		
 	     imageView = (ImageView)findViewById(R.id.image);
-	     imageView.setImageDrawable(getResources().getDrawable(R.drawable.e_right));  
+	     imageView.setImageDrawable(getResources().getDrawable(R.drawable.e_up));  
 	     
 ////////////////////////////////////////////////////////////////////////////////////////   
         mResult = (EditText) findViewById(R.id.recognition_text);
@@ -251,7 +253,7 @@ public class BaiduVoiceTest extends FragmentActivity {
                     	  result_one = vcm.VisualRowSimp(1);
                      }else
                      {
-                    	 mResult.setText(sb.toString()+"判断： "+judge.toJudge(sb.toString())+"!no!");
+                    	 mResult.setText(sb.toString()+"判断： "+judge.toJudge(sb.toString())+"错误");
 //                    	 System.out.println("no!!!!!!!!!");
                     	 result_one = vcm.VisualRowSimp(0);
                      }
@@ -288,7 +290,7 @@ public class BaiduVoiceTest extends FragmentActivity {
                      
                      //下一步的方向和图片设置
                      directE = vcm.setImageE(vcm.direct());
-//                     imageView.setImageDrawable(getResources().getDrawable(directE));
+                  //   imageView.setImageDrawable(getResources().getDrawable(directE));
                      
                      Bitmap bitMap = BitmapFactory.decodeResource(getResources(), directE);
              		int width = bitMap.getWidth();
